@@ -1,0 +1,53 @@
+1. What are the Conditional Operators in Java?
+There are three types of the conditional operator in Java:
+
+Conditional AND
+Conditional OR
+Ternary Operator
+
+2. What are the types of operators based on the number of operands?
+There are two types of mathematical operators: unary and binary. Unary operators perform an action with a 
+single operand. Binary operators perform actions with two operands. 
+
+3. What is the use of Switch case in Java programming?
+The switch statement or switch case in java is a multi-way branch statement. Based on the value of the expression
+given, different parts of code can be executed quickly. The given expression can be of a primitive data type such
+as int, char, short, byte, and char.
+
+4. What are the priority levels of arithmetic operation in Java?
+An arithmetic operation is solve from Left-To-Right and the order of precedence of operators are Paranthesis, 
+Division, Multiplication, Addition, Subtraction.
+
+5. What are the conditional Statements and use of conditional statements in Java?
+Java has the following conditional statements: Use if to specify a block of code to be executed, if a specified
+condition is true. Use else to specify a block of code to be executed, if the same condition is false. Use else if
+to specify a new condition to test, if the first condition is false.
+
+6. What is the syntax of if else statement>
+if (condition) {
+  // block of code to be executed if the condition is true
+} 
+else {
+  // block of code to be executed if the condition is false
+}
+
+7. What are the 3 types of iterative statements in Java>
+For loop
+While loop
+Do-while loop
+
+8. Write the difference between for loop and do-while loop?
+for loop provides a concise way of writing the loop structure. Unlike a while loop, a for statement consumes the
+initialization, condition and increment/decrement in one line thereby providing a shorter, easy to debug structure
+of looping.
+do while loop is similar to while loop with the only difference that it checks for the condition after executing
+the statements, and therefore is an example of Exit Control Loop.
+
+9. Write a program to print numbers from 1 to 10.
+class HelloWorld {
+    public static void main(String[] args) {
+        for(int i=1; i<=10; i++){
+            System.out.println(i);
+        }
+    }
+}
