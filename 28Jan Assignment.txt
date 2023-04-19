@@ -1,8 +1,0 @@
-1. What are the Conditional Operators in Java?
-There are three types of the conditional operator in Java:
-
-Conditional AND
-Conditional OR
-Ternary Operator
-
-2. 
