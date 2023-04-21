@@ -1,0 +1,50 @@
+1. What do you mean by an array?
+An array is a container object that holds a fixed number of values of a single type. The length of an 
+array is established when the array is created. After creation, its length is fixed.
+
+2. How to create an array?
+An array declaration has two components: the type and the name. type declares the element type of the 
+array. The element type determines the data type of each element that comprises the array.
+type var-name[];
+OR
+type[] var-name;
+
+3. Can we change the size of an array at run time?
+No, because array size cannot be changed once initialized.
+
+4. Can you declare an array without assigning the size of an array?
+Yes. We can declare an array without size but before using it needs to be initialized
+
+5. What is the default value of array?
+Since no values are passed during initialization, all elements of the array are set to their default 
+value of 0.
+
+6. What is a 1D array with an example?
+A One-Dimensional Array is the simplest form of an Array in which the elements are stored linearly and 
+can be accessed individually by specifying the index value of each element stored in the array. Example:-
+data-type var-name[];
+       OR 
+data-type[] var-name;
+       OR
+data-type []var-name;    
+
+7. Write a program on a 2D array?
+class array2D {
+    public static void main(String[] args) {
+
+        int a[][] = {
+            {1, -2, 3}, 
+            {-4, -5, 6, 9}, 
+            {7}, 
+        };
+      
+        for (int i = 0; i < a.length; ++i) {
+            for(int j = 0; j < a[i].length; ++j) {
+                System.out.println(a[i][j]);
+            }
+        }
+    }
+}
+
+
+
