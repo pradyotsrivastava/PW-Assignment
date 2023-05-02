@@ -1,0 +1,126 @@
+NOTE :- I HAVE ONLY WRITTEN THE MAIN FUNCTION OF EVERY QUESTION
+
+1. WAP to remove Duplicates from a String? (Take any String example with duplicate characters)
+public static void main(String args[]) {
+    String myStr = "Hello World";
+    StringBuilder output = new StringBuilder();
+    for(int i=0; i<myStr.length(); i++) {
+        char c = myStr.charAt(i);
+        if (myStr.indexOf(c) == myStr.lastIndexOf(c))
+            output.append(c);
+    }
+        System.out.println(output);
+}
+
+2. WAP to print Duplicates characters from the String.
+public static void main(String args[]) {
+    String myStr = "Hello World";
+    StringBuilder output = new StringBuilder();
+    for(int i=0; i<myStr.length(); i++) {
+        char c = myStr.charAt(i);
+        if (myStr.indexOf(c) != myStr.lastIndexOf(c))
+            if(output.indexOf(String.valueOf(c)) == -1)
+                output.append(c);
+    }
+        System.out.println(output);
+}
+
+3. WAP to check if “2552” is palindriome or not.
+public static void main(String args[]) {   
+    int numb = 2552, rem=0;
+    for(int i=numb ; i>0; i/=10){
+        rem*=10;
+        rem+=i%10;
+    }
+    if(numb==rem)
+        System.out.println("It's a Palindrome");
+    else
+        System.out.println("Not a Palindrome");
+}
+
+4. WAP to count the number of consonants, vowels, special characters in a String.
+public static void main(String args[]) {
+    String myStr = "Hello planet earth, you are a great planet.";
+    int consonants = 0, vowels = 0, specials = 0;
+    for(int i=0; i<myStr.length(); i++) {
+        char c = myStr.charAt(i);
+        if (Character.isLetter(c))
+            if ("AEIOUaeiou".indexOf(c) != -1)
+                vowels++;
+            else
+                consonants++;
+        else
+            specials++;
+    }
+    System.out.println("Consonants: " + consonants);
+    System.out.println("Vowels: " + vowels);
+    System.out.println("Specials: " + specials);
+}
+
+5. WAP to implement Anagram Checking least inbuilt methods being used.
+public static void main(String args[]) {
+    String str1 = "School Master";
+    String str2 = "The Classroom";
+    str1=str1.replace(" ", "").toLowerCase();
+    str2=str2.replace(" ", "").toLowerCase();
+    char []ar1=str1.toCharArray();
+    char []ar2=str2.toCharArray();
+    Arrays.sort(ar1);
+    Arrays.sort(ar2);
+    if(Arrays.equals(ar1, ar2))
+        System.out.println("It's an Anagram");
+    else
+        System.out.println("Its not an Anagram");
+}
+
+6. WAP to implement Pangram Checking with least inbuilt methods being used.
+public static void main(String[] args) {
+    boolean flag=false;
+    String str="THE QUICK BROWN FOX JUMPS OVER LAZY DOG";
+    str=str.replace(" ", "");
+    char []ch=str.toCharArray();
+    int ar[]=new int[26];
+    for(int i=0;i<ch.length;i++)
+        ar[ch[i]-65]++;
+    for(int i=0;i<ar.length;i++)
+        if(ar[i]==0){
+                System.out.println("Its not pangram");
+                flag=true;
+            }
+    if(flag==false)
+        System.out.println("Its pangram");
+}
+
+7. WAP to find if String contains all unique characters.
+public static void main(String args[]) {
+    String myStr = "Iceman";
+    StringBuilder output = new StringBuilder();
+    for(int i=0; i<myStr.length(); i++) {
+        char c = myStr.charAt(i);
+        if (myStr.indexOf(c) != myStr.lastIndexOf(c)) {
+            System.out.println("Not All are Unique");
+            System.exit(0);
+            }
+    }
+    System.out.println("All are Unique");
+}
+
+8. WAP to find the maximum occurring character in a String.
+public static void main(String args[]) {
+    String myStr = "Hello planet earth, you are a great planet.";
+    StringBuilder output = new StringBuilder();
+    int maxx=0;
+    char maxxchar=' ';
+    for(int i=0; i<myStr.length(); i++) {
+        char c = myStr.charAt(i);
+        int count=0;
+        for (int j = 0; j < myStr.length(); j++)
+            if (c == myStr.charAt(j) && Character.isLetter(c))
+                count++;
+        if(count>maxx) {
+            maxx = count;
+            maxxchar=c;
+        }
+    }
+    System.out.println("Most Occured Letter is '"+ maxxchar + "' " + maxx + " Times");
+}
