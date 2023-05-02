@@ -1,0 +1,40 @@
+1. What is the default value of Array for different data types?
+For byte, short, int, long, float, double : The default value of each element in the array is 0.
+For boolean : The default value of each element in the array is false.
+For String, Object : The default value of each element in the array is null.
+
+2. Can you pass the negative number in Array size?
+No, Array dimensions cannot have a negative size.
+
+3. Where does Array stored in JVM memory?
+Arrays are stored in heap area in JVM memory.
+
+4. What are the disadvantages of Array?
+Disadvantages of Array:-
+Fixed size
+Memory allocation issues
+Insertion and deletion issues
+Wasted space
+Limited data type support
+Lack of flexibility
+
+5. What is an Anonymous Array in Java? Give an example?
+An array in Java without any name is known as an anonymous array. It is an array just for creating and using instantly.
+Using an anonymous array, we can pass an array with user values without the referenced variable.
+Syntax:- new <data type>[]{<list of values with comma separator>};
+new int[] { 1, 2, 3, 4};  
+new char[] {'x', 'y', 'z'}; 
+new String[] {"Geeks", "for", "Geeks"}; 
+new int[][] { {10, 20}, {30, 40, 50} };
+
+6. What are the different ways to traverse an Array in java?
+Using for loop
+Using enhanced for loop
+Using while loop
+Using do-while loop
+
+7. What is the difference between length and length() method? Give an Examples?
+The key difference between length and length() method is that the Java length variable describes the size of an array,
+while length() method tells how many characters a text String contains.
+Example:- int ArraySize = Array.length;
+int StringSize = String.length();
