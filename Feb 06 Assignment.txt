@@ -1,0 +1,79 @@
+1. What is Mutable String in Java Explain with an example.
+Mutable strings are those strings whose content can be changed without creating a new object. StringBuffer
+and StringBuilder are mutable versions of String in java.
+
+2. WAP to reverse a String
+Input :- “PWSKILLS”
+Output :- “SLLIKSPW”
+public static void main(String args[]) {
+    String input = "PWSKILLS";
+    StringBuilder output = new StringBuilder();
+    for(int i=input.length()-1; i>=0 ; i--)
+        output.append(input.charAt(i));
+    System.out.println(output);
+}
+
+
+3. WAP to reverse a sentence while preserving the position
+Input: Think Twice
+Output: "kniht eciwt"
+import java.util.Scanner;
+
+public class ReverseSentence {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a sentence: ");
+        String inputSentence = scanner.nextLine();
+
+        String reversedSentence = reverseSentence(inputSentence);
+
+        System.out.println("Reversed Sentence: " + reversedSentence);
+    }
+
+    private static String reverseSentence(String sentence) {
+        String[] words = sentence.split("\\s");
+        StringBuilder reversedSentence = new StringBuilder();
+
+        for (String word : words) {
+            StringBuilder reversedWord = new StringBuilder(word);
+            reversedWord.reverse();
+            reversedSentence.append(reversedWord).append(" ");
+        }
+
+        return reversedSentence.toString().trim();
+    }
+}
+
+
+
+4. WAP to sort a String Alphabetically
+import java.util.Arrays;
+
+public class SortStringAlphabetically {
+    public static void main(String[] args) {
+        String inputString = "programming";
+
+        String sortedString = sortStringAlphabetically(inputString);
+
+        System.out.println("Original String: " + inputString);
+        System.out.println("Sorted String: " + sortedString);
+    }
+
+    private static String sortStringAlphabetically(String str) {
+        char[] charArray = str.toCharArray();
+        Arrays.sort(charArray);
+        return new String(charArray);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
