@@ -1,0 +1,76 @@
+1. Explain different types of Errors in Java
+In Java, errors are exceptional conditions that are external to the application and typically cannot be handled by the Java program. They represent severe issues that are beyond the control of the application. Some common types of errors in Java include:
+
+OutofMemoryError: Occurs when the Java Virtual Machine (JVM) runs out of memory.
+
+StackOverflowError: Occurs when the stack size exceeds its limit.
+
+NoClassDefFoundError: Occurs when the Java Virtual Machine (JVM) cannot find a class at runtime.
+
+LinkageError: Indicates a problem with linking the binary data of a class.
+
+2. What is an Exception in Java
+An exception in Java is an event that disrupts the normal flow of the program. It occurs during the execution of a program and can be caused by various factors, such as incorrect user input, hardware failure, or unexpected conditions. Exceptions are represented by objects derived from the Throwable class, and they can be handled using exception handling mechanisms.
+
+3. How can you handle exceptions in Java? Explain with an example
+Exception handling in Java is done using the try, catch, finally, and throw keywords. The basic structure is as follows:
+
+try {
+    // Code that may throw an exception
+} catch (ExceptionType1 e1) {
+    // Handle exception of type ExceptionType1
+} catch (ExceptionType2 e2) {
+    // Handle exception of type ExceptionType2
+} finally {
+    // Code to be executed whether an exception occurs or not
+}
+
+public class ExceptionHandlingExample {
+    public static void main(String[] args) {
+        try {
+            // Code that may throw an exception
+            int result = divide(10, 0);
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            // Handle exception
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            // Code to be executed whether an exception occurs or not
+            System.out.println("Finally block executed");
+        }
+    }
+
+    // Method that may throw an exception
+    private static int divide(int num1, int num2) {
+        return num1 / num2;
+    }
+}
+In this example, the divide method may throw an ArithmeticException when attempting to divide by zero. The exception is caught in the catch block, and the finally block is executed regardless of whether an exception occurs or not.
+
+4. Why do we need exception handling in Java?
+Exception handling in Java is crucial for the following reasons:
+
+Maintaining Program Flow: Exception handling allows programs to gracefully handle unexpected situations and continue their execution without terminating abruptly.
+
+Debugging and Troubleshooting: It provides a mechanism for identifying and handling errors, making it easier to debug and troubleshoot issues.
+
+Error Reporting: Exception handling helps in reporting errors to users in a more informative and user-friendly manner, enhancing the user experience.
+
+Resource Management: It allows for proper cleanup and release of resources in case of exceptions, ensuring that resources like files, network connections, etc., are properly managed.
+
+5. What is the difference between exception and error in Java?
+In Java, exceptions and errors are both subclasses of the Throwable class, but they serve different purposes:
+
+Exception: Represents exceptional conditions that a program should catch and handle. Exceptions are typically recoverable, and the program can continue its execution.
+
+Error: Represents serious problems that are usually beyond the control of the application. Errors are typically not recoverable, and they often lead to termination of the program.
+
+6. Name the different types of exceptions in Java
+Exceptions in Java can be broadly classified into two categories:
+
+Checked Exceptions: These are exceptions that the Java compiler forces you to handle, either by using a try-catch block or by declaring the exception in the method signature using the throws keyword. Examples include IOException, SQLException, etc.
+
+Unchecked Exceptions (Runtime Exceptions): These are exceptions that the compiler does not force you to handle. They are subclasses of RuntimeException and are usually caused by programming errors. Examples include NullPointerException, ArrayIndexOutOfBoundsException, ArithmeticException, etc.
+
+7. Can we just use try instead of finally and catch blocks?
+No, a try block alone is not sufficient. In Java, a try block must be accompanied by either a catch block or a finally block, or both. The catch block is used to handle the exception, and the finally block is used for cleanup code that should be executed whether an exception occurs or not.

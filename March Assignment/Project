@@ -1,0 +1,98 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Patient {
+    private String name;
+    private String medicalHistory;
+
+    // Constructors, getters, and setters...
+
+    @Override
+    public String toString() {
+        return "Patient{name='" + name + "', medicalHistory='" + medicalHistory + "'}";
+    }
+}
+
+class Doctor {
+    private String name;
+    private String specialization;
+
+    // Constructors, getters, and setters...
+
+    @Override
+    public String toString() {
+        return "Doctor{name='" + name + "', specialization='" + specialization + "'}";
+    }
+}
+
+class Appointment {
+    private Doctor doctor;
+    private Patient patient;
+    private String date;
+
+    // Constructors, getters, and setters...
+
+    @Override
+    public String toString() {
+        return "Appointment{doctor=" + doctor + ", patient=" + patient + ", date='" + date + "'}";
+    }
+}
+
+public class HospitalManagementApp {
+    private List<Doctor> doctors;
+    private List<Patient> patients;
+    private List<Appointment> appointments;
+
+    public HospitalManagementApp() {
+        this.doctors = new ArrayList<>();
+        this.patients = new ArrayList<>();
+        this.appointments = new ArrayList<>();
+    }
+
+    public void addDoctor(Doctor doctor) {
+        doctors.add(doctor);
+    }
+
+    public void addPatient(Patient patient) {
+        patients.add(patient);
+    }
+
+    public void bookAppointment(Doctor doctor, Patient patient, String date) {
+        Appointment appointment = new Appointment();
+        appointment.setDoctor(doctor);
+        appointment.setPatient(patient);
+        appointment.setDate(date);
+        appointments.add(appointment);
+    }
+
+    public void displayAppointments() {
+        System.out.println("Appointments:");
+        for (Appointment appointment : appointments) {
+            System.out.println(appointment);
+        }
+    }
+
+    public static void main(String[] args) {
+        HospitalManagementApp hospitalApp = new HospitalManagementApp();
+
+        // Adding Doctors
+        Doctor doctor1 = new Doctor("Dr. Smith", "Cardiologist");
+        Doctor doctor2 = new Doctor("Dr. Johnson", "Orthopedic");
+        hospitalApp.addDoctor(doctor1);
+        hospitalApp.addDoctor(doctor2);
+
+        // Adding Patients
+        Patient patient1 = new Patient("John Doe", "Hypertension");
+        Patient patient2 = new Patient("Jane Smith", "Broken Leg");
+        hospitalApp.addPatient(patient1);
+        hospitalApp.addPatient(patient2);
+
+        // Booking Appointments
+        hospitalApp.bookAppointment(doctor1, patient1, "2024-01-10");
+        hospitalApp.bookAppointment(doctor2, patient2, "2024-01-15");
+
+        // Displaying Appointments
+        hospitalApp.displayAppointments();
+    }
+}

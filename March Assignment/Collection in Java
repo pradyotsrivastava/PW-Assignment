@@ -1,0 +1,86 @@
+1. What is the Collection framework in Java?
+The Collection framework in Java is a unified architecture that provides interfaces, implementations, and algorithms to represent and manipulate a group of objects known as elements. It is a part of the Java API and includes interfaces such as List, Set, Map, and their respective implementations, along with utility classes like Collections for sorting and searching.
+
+2. What is the difference between ArrayList and LinkedList?
+ArrayList:
+
+Implements the List interface.
+Backed by a resizable array.
+Provides fast random access and better performance for get operations.
+Slower for add and remove operations in the middle of the list.
+LinkedList:
+
+Implements the List interface.
+Backed by a doubly-linked list.
+Provides fast add and remove operations, especially in the middle.
+Slower for random access and get operations.
+
+3. What is the difference between Iterator and ListIterator?
+Iterator:
+
+Available in the java.util package.
+Allows forward-only traversal.
+Can be used with any collection that implements the Iterable interface.
+Supports hasNext() and next() methods.
+ListIterator:
+
+Available in the java.util package.
+Extends Iterator and provides additional methods.
+Allows bidirectional traversal (forward and backward).
+Specifically designed for lists and supports hasNext(), next(), hasPrevious(), previous(), etc.
+
+4. What is the difference between Iterator and Enumeration?
+Iterator:
+
+Introduced in Java 1.2.
+Part of the Collections framework.
+Supports both read and remove operations.
+More powerful and flexible.
+Enumeration:
+
+Deprecated in Java 1.0 and replaced by Iterator.
+Part of the original Collections framework.
+Supports only read operations.
+Less powerful and flexible than Iterator.
+
+5. What is the difference between List and Set?
+List:
+
+Ordered collection (maintains the order of elements).
+Allows duplicate elements.
+Accessed by index.
+Implementations include ArrayList, LinkedList, etc.
+Set:
+
+Unordered collection.
+Does not allow duplicate elements.
+No index-based access.
+Implementations include HashSet, TreeSet, etc.
+
+6. What is the difference between HashSet and TreeSet?
+HashSet:
+
+Does not maintain any order.
+Allows null elements.
+Implemented using a hash table.
+Generally faster than TreeSet.
+TreeSet:
+
+Maintains natural order or order specified by a comparator.
+Does not allow null elements.
+Implemented using a Red-Black tree.
+Slower than HashSet for add, remove, and contains operations.
+
+7. What is the difference between Array and ArrayList?
+Array:
+
+Fixed size once declared.
+Can store primitive types and objects.
+Provides direct access using index.
+No built-in methods for dynamic operations.
+ArrayList:
+
+Dynamic size (can grow or shrink).
+Can only store objects (not primitive types directly).
+Provides built-in methods for dynamic operations like add, remove, etc.
+Uses an underlying array, but handles resizing automatically.

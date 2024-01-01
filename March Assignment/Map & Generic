@@ -1,0 +1,86 @@
+1. What is a Map in Java?
+A Map in Java is an interface in the Java Collections Framework that represents a collection of key-value pairs. Each key is associated with exactly one value, and each key must be unique within the map. Some commonly used Map implementations include HashMap, TreeMap, and LinkedHashMap.
+
+2. What are the commonly used implementations of Map in Java?
+Commonly used implementations of the Map interface in Java include:
+
+HashMap: Uses a hash table for fast retrieval. Does not guarantee order.
+TreeMap: Maintains elements in natural order or by a specified comparator.
+LinkedHashMap: Maintains insertion order. Combines elements of both HashMap and LinkedListMap.
+
+3. What is the difference between HashMap and TreeMap?
+HashMap:
+
+Uses a hash table for storage.
+Provides constant-time average complexity for basic operations.
+Does not maintain any order of elements.
+TreeMap:
+
+Implemented as a Red-Black tree.
+Maintains elements in sorted order, based on either natural order or a specified comparator.
+Slower than HashMap for basic operations but offers ordered traversal.
+
+4. How do you check if a key exists in a Map in Java?
+To check if a key exists in a Map, you can use the containsKey() method:
+
+Map<String, Integer> myMap = new HashMap<>();
+// Adding entries to the map...
+
+String keyToCheck = "someKey";
+if (myMap.containsKey(keyToCheck)) {
+    System.out.println("Key exists in the map");
+} else {
+    System.out.println("Key does not exist in the map");
+}
+
+5. What are Generics in Java?
+Generics in Java allow you to create classes, interfaces, and methods that operate on types (parameters) specified at compile time. They provide compile-time type safety by allowing you to specify the type(s) that a class or method can work with.
+
+6. What are the benefits of using Generics in Java?
+Benefits of Generics:
+
+Type Safety: Detects and prevents type-related errors at compile time.
+Code Reusability: Enables the creation of generic classes and methods that work with multiple types.
+Elimination of Type Casting: Reduces the need for explicit type casting, improving code readability.
+Better Performance: Generics provide better performance by avoiding the overhead of runtime type checks.
+
+7. What is a Generic Class in Java?
+A Generic Class in Java is a class that declares one or more type parameters. These type parameters can be used to create classes, methods, or interfaces that work with different data types. The type parameter is specified when an instance of the generic class is created.
+
+public class MyGenericClass<T> {
+    private T data;
+
+    public MyGenericClass(T data) {
+        this.data = data;
+    }
+
+    public T getData() {
+        return data;
+    }
+}
+
+8. What is a Type Parameter in Java Generics?
+A Type Parameter in Java Generics is a placeholder for a type that will be specified when an instance of a generic class, method, or interface is created. It is represented by a single uppercase letter, conventionally starting with "T" (for type). Type parameters provide flexibility for creating generic components.
+
+public class MyGenericClass<T> {
+    // T is the type parameter
+}
+
+9. What is a Generic Method in Java?
+A Generic Method in Java is a method that declares its own type parameters. These type parameters can be used to create methods that work with multiple types, providing flexibility and type safety.
+
+public <T> T myGenericMethod(T value) {
+    // Method logic using type parameter T
+    return value;
+}
+
+10. What is the difference between ArrayList and ArrayList<T>?
+There is no significant difference between ArrayList and ArrayList<T> in terms of functionality. The <T> is a generic type parameter that indicates that the ArrayList is capable of storing elements of type T. The use of generics (with <T>) provides type safety and avoids the need for explicit casting when retrieving elements from the list.
+
+// Without generics (pre-Java 5)
+ArrayList myList = new ArrayList();
+Object value = myList.get(0);  // Need explicit casting
+
+// With generics
+ArrayList<String> myGenericList = new ArrayList<>();
+String strValue = myGenericList.get(0);  // No casting needed
