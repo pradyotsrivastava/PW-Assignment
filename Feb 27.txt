@@ -1,0 +1,39 @@
+
+1. What is an interface in Java?
+An interface in Java is a collection of abstract methods (methods without a body) and constants (public, static, final variables). It defines a contract that classes must adhere to by providing concrete implementations for all the methods declared in the interface. An interface allows multiple inheritance, meaning a class can implement multiple interfaces.
+
+2. Which modifiers are allowed for methods in an Interface? Explain with an example.
+In an interface, the only allowed modifiers for methods are:
+
+public: All methods in an interface are implicitly public.
+abstract: All methods in an interface are implicitly abstract.
+
+3. What is the use of an interface in Java? Or, why do we use an interface in Java?
+Interfaces in Java serve several purposes:
+
+Achieving Abstraction: Interfaces provide a way to achieve abstraction by declaring methods without defining their implementation. Classes implementing the interface provide the concrete implementation.
+
+Achieving Multiple Inheritance: Java allows a class to implement multiple interfaces, enabling a form of multiple inheritance.
+
+Defining Contracts: Interfaces define a contract that classes must adhere to. This helps in creating a standard set of methods that implementing classes must provide.
+
+Separation of Concerns: Interfaces separate the declaration of methods from their implementation, promoting a clear separation of concerns in the design.
+
+4. What is the difference between an abstract class and an interface in Java?
+The main differences between an abstract class and an interface in Java are:
+
+Abstract class:
+
+Can have both abstract (with no implementation) and concrete methods.
+Can have instance variables (fields).
+Supports constructors.
+Allows access modifiers for methods and fields.
+A class can extend only one abstract class.
+Interface:
+
+Can only have abstract methods (prior to Java 8).
+Can only have constants as instance variables (public, static, final).
+Does not support constructors.
+All methods are implicitly public and abstract.
+A class can implement multiple interfaces.
+Here's an example illustrating the differences:
