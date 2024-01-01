@@ -1,0 +1,102 @@
+1. Program to display current date and time in Java:
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class DisplayDateTime {
+    public static void main(String[] args) {
+        // Get the current date and time
+        LocalDateTime currentDateTime = LocalDateTime.now();
+
+        // Format the date and time
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = currentDateTime.format(formatter);
+
+        // Display the formatted date and time
+        System.out.println("Current Date and Time: " + formattedDateTime);
+    }
+}
+
+2. Program to convert a date to a string in the format "MM/dd/yyyy":
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class DateToString {
+    public static void main(String[] args) {
+        // Get the current date
+        LocalDate currentDate = LocalDate.now();
+
+        // Format the date as "MM/dd/yyyy"
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        String formattedDate = currentDate.format(formatter);
+
+        // Display the formatted date
+        System.out.println("Formatted Date: " + formattedDate);
+    }
+}
+
+3. Difference between Collections and Streams in Java:
+Collections:
+
+Collections are data structures that store and manage elements.
+They provide methods for adding, removing, and accessing elements.
+Operations are performed eagerly (immediate execution).
+Common classes: List, Set, Map, etc.
+Streams:
+
+Streams represent a sequence of elements and support functional-style operations.
+They allow declarative processing of data (lazy evaluation).
+Operations include filter, map, reduce, etc.
+Introduced in Java 8 as part of the Stream API.
+Example:
+// Collections example (List)
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+List<String> filteredNames = names.stream().filter(s -> s.startsWith("A")).collect(Collectors.toList());
+
+// Streams example
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+List<String> filteredNames = names.stream().filter(s -> s.startsWith("A")).collect(Collectors.toList());
+
+4. Enums in Java:
+Enums in Java are a special data type that define a set of constants. They are used to represent fixed values like days of the week, months, etc.
+
+Example:
+public enum Day {
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+}
+
+// Using the enum
+Day today = Day.WEDNESDAY;
+System.out.println("Today is: " + today);
+
+5. Built-in Annotations in Java:
+Java provides several built-in annotations that convey metadata about the code to the compiler or runtime. Some common built-in annotations include:
+
+@Override: Indicates that a method overrides a method in a superclass.
+@Deprecated: Marks a class, method, or field as deprecated, meaning it is discouraged from use.
+@SuppressWarnings: Instructs the compiler to suppress specific warnings.
+@FunctionalInterface: Indicates that an interface is intended to be a functional interface (single abstract method).
+
+Example:
+
+public class Example {
+
+    @Override
+    public String toString() {
+        return "This method overrides the toString method.";
+    }
+
+    @Deprecated
+    public void oldMethod() {
+        // Deprecated method implementation
+    }
+
+    @SuppressWarnings("unchecked")
+    public void suppressWarning() {
+        // Code with suppressed warning
+    }
+
+    @FunctionalInterface
+    interface MyFunctionalInterface {
+        void myMethod();
+    }
+}
