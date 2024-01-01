@@ -36,4 +36,3 @@ Can only have constants as instance variables (public, static, final).
 Does not support constructors.
 All methods are implicitly public and abstract.
 A class can implement multiple interfaces.
-Here's an example illustrating the differences:
