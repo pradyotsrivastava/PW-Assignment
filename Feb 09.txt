@@ -1,0 +1,76 @@
+
+1. What is Encapsulation in Java? Why is it called Data hiding?
+Encapsulation is one of the four fundamental Object-Oriented Programming (OOP) concepts, and it refers to bundling the data (attributes) and methods (functions) that operate on the data into a single unit known as a class. It is called "Data hiding" because the internal implementation details of the object are hidden from the outside world, and access to the data is restricted to the methods defined in the class.
+
+2. What are the important features of Encapsulation?
+The important features of Encapsulation include:
+
+Data Hiding: The internal details of the object are hidden from the outside world.
+
+Access Control: Access to the internal state (attributes) is controlled through methods.
+
+Modularity: The internal implementation can be changed without affecting the external code that uses the class.
+
+3. What are getter and setter methods in Java? Explain with an example.
+public class Person {
+    private String name;  // private field
+
+    // Getter method to retrieve the value of the private field
+    public String getName() {
+        return name;
+    }
+
+    // Setter method to set the value of the private field
+    public void setName(String newName) {
+        // Additional validation or logic can be added here
+        this.name = newName;
+    }
+}
+
+4. What is the use of this keyword? Explain with an example.
+public class Example {
+    private int x;
+
+    // Constructor
+    public Example(int x) {
+        this.x = x;  // Using "this" to refer to the instance variable
+    }
+
+    // Method using "this" to refer to the instance variable
+    public void setX(int x) {
+        this.x = x;
+    }
+}
+
+5. What is the advantage of Encapsulation?
+The main advantages of encapsulation include:
+
+Controlled Access: Access to the internal state of an object is controlled through methods, allowing validation and modification logic to be applied.
+
+Flexibility: The internal implementation details can be changed without affecting the external code that uses the class.
+
+Security: Encapsulation helps in hiding sensitive information and prevents unintended interference.
+
+6. How to achieve encapsulation in Java? Give an example.
+public class Circle {
+    private double radius;  // private field
+
+    // Constructor
+    public Circle(double radius) {
+        setRadius(radius);  // Using setter method for encapsulation
+    }
+
+    // Getter method to retrieve the value of the private field
+    public double getRadius() {
+        return radius;
+    }
+
+    // Setter method to set the value of the private field
+    public void setRadius(double radius) {
+        if (radius > 0) {
+            this.radius = radius;
+        } else {
+            System.out.println("Invalid radius value.");
+        }
+    }
+}
