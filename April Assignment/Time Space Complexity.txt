@@ -1,0 +1,26 @@
+Question 1. Analyze the time complexity of the following Java code and suggest a way to improve it:
+int sum=0;
+for (int i=1; i<=n;i++){
+for(int j=1;j<=i;j++){
+sum++
+}
+}
+
+
+Answer :- T=O(n2) 
+Question 2: Find the value of T(2) for the recurrence relation T(n) = 3T(n-1) + 12n, given that T(0) = 5.
+Ans T(2)=105
+
+Question 3: Given a recurrence relation, solve it using a substitution method.
+Relation : T(n) = T(n - 1) + c
+Ans T(n)=nc
+
+Question 4: Given a recurrence relation:
+T(n) = 16T(n/4) + n2logn
+Ans T=θ(n2logn)
+
+Question 5: Solve the following recurrence relation using recursion tree method T(n) = 2T(n/2) + n
+Ans T(n)=2n
+
+Question 6. T(n) = 2T(n/2) + K, Solve using Recurrence tree method.
+Ans T(n)=k(log2n)

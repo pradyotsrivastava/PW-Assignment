@@ -1,0 +1,93 @@
+Q1. Program to sort an array in descending order using bubble sort:
+java
+Copy code
+public class BubbleSortDescending {
+    public static void main(String[] args) {
+        int[] array = {3, 5, 1, 6, 0};
+
+        // Bubble sort in descending order
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j] < array[j + 1]) {
+                    // Swap elements
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+
+        // Display the sorted array
+        System.out.print("Sorted Array (Descending): ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+    }
+}
+Q2. Program to sort an array in descending order using selection sort:
+java
+Copy code
+public class SelectionSortDescending {
+    public static void main(String[] args) {
+        int[] array = {3, 5, 1, 6, 0};
+
+        // Selection sort in descending order
+        for (int i = 0; i < array.length - 1; i++) {
+            int maxIndex = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] > array[maxIndex]) {
+                    maxIndex = j;
+                }
+            }
+
+            // Swap elements
+            int temp = array[i];
+            array[i] = array[maxIndex];
+            array[maxIndex] = temp;
+        }
+
+        // Display the sorted array
+        System.out.print("Sorted Array (Descending): ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+    }
+}
+Q3. Program to sort an array in descending order using insertion sort:
+java
+Copy code
+public class InsertionSortDescending {
+    public static void main(String[] args) {
+        int[] array = {3, 5, 1, 6, 0};
+
+        // Insertion sort in descending order
+        for (int i = 1; i < array.length; i++) {
+            int key = array[i];
+            int j = i - 1;
+
+            while (j >= 0 && array[j] < key) {
+                // Shift elements to the right
+                array[j + 1] = array[j];
+                j--;
+            }
+
+            // Place the key in the correct position
+            array[j + 1] = key;
+        }
+
+        // Display the sorted array
+        System.out.print("Sorted Array (Descending): ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+    }
+}
+Q4. Number of passes required to sort the array in descending order using bubble sort:
+The number of passes for bubble sort is equal to the number of elements in the array minus one.
+
+In this case, for the input array (3, 5, 1, 6, 0), the number of passes would be 4.
+
+Q5. Number of iterations to sort the array in descending order using selection sort:
+The number of iterations for selection sort is equal to the number of elements in the array minus one.
+
+In this case, for the input array (3, 5, 1, 6, 0), the number of iterations would be 4.

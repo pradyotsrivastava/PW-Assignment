@@ -1,0 +1,77 @@
+
+1. Input and Output Stream in Java:
+Input Stream:
+
+Represents a stream of input bytes.
+Used to read data from a source.
+Output Stream:
+
+Represents a stream of output bytes.
+Used to write data to a destination.
+
+2. Methods of OutputStream:
+Some common methods of OutputStream in Java include:
+
+write(int b): Writes the specified byte to the output stream.
+write(byte[] b): Writes an array of bytes to the output stream.
+flush(): Flushes the output stream, forcing any buffered output bytes to be written.
+
+3. Serialization in Java:
+Serialization is the process of converting an object into a byte stream. It is used for storing objects or sending objects over a network.
+
+4. Serializable interface in Java:
+Serializable is a marker interface in Java. Classes that implement this interface can be serialized. It does not have any methods.
+
+public class MyClass implements Serializable {
+    // Class implementation
+}
+
+5. Deserialization in Java:
+Deserialization is the process of reconstructing an object from a byte stream. It is used to retrieve stored or transmitted objects.
+
+6. Serialization in Java:
+Serialization is achieved by implementing the Serializable interface. The object is converted into a stream of bytes using an ObjectOutputStream.
+
+try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data.ser"))) {
+    MyClass obj = new MyClass();
+    oos.writeObject(obj);
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+7. Deserialization in Java:
+Deserialization is achieved by implementing the Serializable interface. The object is reconstructed from a stream of bytes using an ObjectInputStream.
+
+try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data.ser"))) {
+    MyClass obj = (MyClass) ois.readObject();
+} catch (IOException | ClassNotFoundException e) {
+    e.printStackTrace();
+}
+
+8. Avoiding Serialization of Certain Member Variables:
+To avoid certain member variables from getting serialized, you can use the transient keyword.
+
+public class MyClass implements Serializable {
+    private transient String transientField; // Will not be serialized
+    private int regularField; // Will be serialized
+}
+
+9. Java IO File Classes API:
+Some classes in the Java IO File Classes API include:
+
+File: Represents a file or directory pathname.
+FileInputStream: Reads data from a file as a stream of bytes.
+FileOutputStream: Writes data to a file as a stream of bytes.
+
+10. Difference between Externalizable and Serializable interface:
+Serializable:
+
+Objects are automatically serialized.
+No need to implement custom methods.
+All non-transient fields are serialized.
+Externalizable:
+
+Objects must implement Externalizable interface.
+Custom methods (writeExternal and readExternal) must be implemented.
+Provides more control over the serialization process.
+Fields are explicitly written and read.

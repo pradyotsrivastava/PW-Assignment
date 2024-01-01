@@ -1,0 +1,131 @@
+Q. Last Occurrence of Target
+import java.util.Scanner;
+
+public class LastOccurrence {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input array size
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+
+        // Input array elements
+        int[] arr = new int[size];
+        System.out.print("Enter the elements of the array: ");
+        for (int i = 0; i < size; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        // Input target
+        System.out.print("Enter the target element: ");
+        int target = scanner.nextInt();
+
+        // Find the last occurrence of the target
+        int result = lastOccurrence(arr, target);
+
+        // Display result
+        System.out.println("Last occurrence of " + target + " is at index: " + result);
+    }
+
+    static int lastOccurrence(int[] arr, int target) {
+        int lastOccur = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                lastOccur = i;
+            }
+        }
+        return lastOccur;
+    }
+}
+
+Q. Count 1's in Sorted Binary Array'. 
+
+public class CountOnes {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input binary array
+        System.out.print("Enter the binary array: ");
+        String binaryString = scanner.next();
+
+        // Count 1's in the binary array
+        int countOnes = countOnes(binaryString);
+
+        // Display result
+        System.out.println("Total number of 1's: " + countOnes);
+    }
+
+    static int countOnes(String binaryString) {
+        int count = 0;
+        for (char c : binaryString.toCharArray()) {
+            if (c == '1') {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+Q. Count Occurrences of a Given Number in Sorted Array
+import java.util.Scanner;
+
+public class CountOccurrences {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input sorted array
+        System.out.print("Enter the sorted array: ");
+        String input = scanner.nextLine();
+        String[] numsStr = input.split(" ");
+        int[] nums = new int[numsStr.length];
+        for (int i = 0; i < numsStr.length; i++) {
+            nums[i] = Integer.parseInt(numsStr[i]);
+        }
+
+        // Input target number
+        System.out.print("Enter the target number: ");
+        int target = scanner.nextInt();
+
+        // Count occurrences of the target number
+        countOccurrences(nums, target);
+    }
+
+    static void countOccurrences(int[] nums, int target) {
+        int count = 0;
+        for (int num : nums) {
+            if (num == target) {
+                count++;
+            }
+        }
+
+        if (count > 0) {
+            System.out.println("Target " + target + " occurs " + count + " times");
+        } else {
+            System.out.println("Target " + target + " not found in the array");
+        }
+    }
+}
+
+Q. Check if a Number is a Perfect Square
+import java.util.Scanner;
+
+public class PerfectSquare {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input number
+        System.out.print("Enter a positive integer: ");
+        int num = scanner.nextInt();
+
+        // Check if the number is a perfect square
+        boolean isPerfectSquare = isPerfectSquare(num);
+
+        // Display result
+        System.out.println("Is " + num + " a perfect square? " + isPerfectSquare);
+    }
+
+    static boolean isPerfectSquare(int num) {
+        int sqrt = (int) Math.sqrt(num);
+        return sqrt * sqrt == num;
+    }
+}
