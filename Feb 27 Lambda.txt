@@ -1,0 +1,32 @@
+
+1. What is the lambda expression of Java 8?
+A lambda expression in Java 8 is a concise way to represent an anonymous function (a function without a name). It provides a clear and expressive syntax for writing functional interfaces (interfaces with a single abstract method), allowing for more readable and concise code.
+
+2. Can you pass lambda expressions to a method? When?
+Yes, lambda expressions can be passed as arguments to methods, provided the method parameter is of a functional interface type. A functional interface is an interface with a single abstract method (SAM).
+
+3. What is the functional interface in Java 8?
+A functional interface in Java 8 is an interface that contains exactly one abstract method. It may contain multiple default or static methods, but only one abstract method. Functional interfaces are also known as Single Abstract Method (SAM) interfaces.
+
+The @FunctionalInterface annotation is used to explicitly declare an interface as a functional interface, though it is not mandatory.
+
+@FunctionalInterface
+interface MyFunctionalInterface {
+    void myMethod();
+
+    // Optional: Default method
+    default void defaultMethod() {
+        System.out.println("Default method");
+    }
+}
+4. Why do we use lambda expressions in Java?
+Lambda expressions in Java offer several advantages:
+
+Conciseness: Lambda expressions provide a concise syntax, reducing boilerplate code for small, one-time use functions.
+Readability: They enhance the readability of code, especially when dealing with functional programming constructs like the Stream API.
+Expressiveness: Lambda expressions express the intention of the code more clearly by focusing on what needs to be done rather than how to do it.
+
+Functional Programming: Lambda expressions facilitate the adoption of functional programming concepts in Java, allowing the use of functions as first-class citizens.
+
+5. Is it mandatory for a lambda expression to have parameters?
+No, it is not mandatory for a lambda expression to have parameters. A lambda expression can have zero or more parameters. If there are no parameters, you still need to use empty parentheses () to represent an empty parameter list.
